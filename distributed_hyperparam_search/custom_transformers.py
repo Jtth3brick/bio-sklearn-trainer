@@ -94,7 +94,7 @@ class LassoFeatureSelector(BaseEstimator, TransformerMixin):
         return X[:, self.support_mask]
 
     def get_feature_names_out(self, input_features=None):
-        if input_features:
+        if input_features is not None:
             return input_features[self.support_mask]
         return None
 
@@ -142,6 +142,6 @@ class RandomForestFeatureSelector(BaseEstimator, TransformerMixin):
         return X[:, self.support_mask]
 
     def get_feature_names_out(self, input_features=None):
-        if input_features:
+        if input_features is not None:
             return input_features[self.support_mask]
         return None
